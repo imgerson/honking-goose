@@ -1,0 +1,22 @@
+{
+  "name": "honking-goose",
+  "version": "1.0.0",
+  "description": "=== Honking Goose === Contributors: imgerson Tags: prank, goose, honk Requires at least: 5.0 Tested up to: 5.2.4 Requires PHP: 7.0 Stable tag: 1.0 License: GPLv2 or later License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "honking-goose.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imgerson/honking-goose.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imgerson/honking-goose/issues"
+  },
+  "homepage": "https://github.com/imgerson/honking-goose#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^12.5.0"
+  }
+}

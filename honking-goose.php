@@ -16,6 +16,14 @@ if ( !function_exists( 'honking_goose_enqueue_scripts' ) ) {
     function honking_goose_enqueue_scripts( $hook ) {
         if ( in_array( $hook, array( 'post.php', 'post-new.php' ) ) ) {
             wp_enqueue_script( 'honking-goose.js', plugins_url( 'honking-goose.js', __FILE__ ), array(), false, true );
+
+            wp_localize_script(
+                'honking-goose.js',
+                'honkingGoose',
+                array(
+                    'mp3Path' => plugins_url( 'goose.mp3', __FILE__ ),
+                )
+            );
         }
     }
 }
