@@ -5,7 +5,7 @@ function playGoose( gooseSoundUrl ) {
 
 function checkKey( e ) {
     if ( e.keyCode === 32 ) {
-        playGoose( `${honkingGoose.dir}/goose.mp3` );
+        playGoose( `${honkingGoose.mp3Path}` );
     }
 }
 

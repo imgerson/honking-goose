@@ -21,9 +21,9 @@ if ( !function_exists( 'honking_goose_enqueue_scripts' ) ) {
                 'honking-goose.js',
                 'honkingGoose',
                 array(
-                    'dir' => plugin_dir_path( '__FILE__' ),
+                    'mp3Path' => plugins_url( 'goose.mp3', __FILE__ ),
                 )
-            )
+            );
         }
     }
 }
