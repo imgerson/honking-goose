@@ -1,0 +1,41 @@
+name: Deploy to WordPress.org
+
+# Triggers the workflow when a new release is published.
+on:
+  release:
+    types: [published]
+
+jobs:
+  # Deploys new releases to wordpress.org.
+  #
+  # Perform the following steps:
+  # - Checks out the repository.
+  # - Deploys the plugin to wordpress.org.
+  # - Uploads the release assets.
+
+  tag:
+    name: New release
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy plugin to wordpress.org
+      id: deploy
+      uses: 10up/action-wordpress-plugin-deploy@stable
+      with:
+        generate-zip: true
+      env:
+        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+        SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+
+    - name: Upload release asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ${{github.workspace}}/${{ github.event.repository.name }}.zip
+        asset_name: ${{ github.event.repository.name }}.zip
+        asset_content_type: application/zip
