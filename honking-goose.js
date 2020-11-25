@@ -5,7 +5,7 @@ function playGoose( gooseSoundUrl ) {
 
 function checkKey( e ) {
     if ( e.keyCode === 32 ) {
-        playGoose( '/wp-content/plugins/honking-goose/goose.mp3' );
+        playGoose( `${honkingGoose.dir}/goose.mp3` );
     }
 }
 
