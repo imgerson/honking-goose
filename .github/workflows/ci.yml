@@ -14,14 +14,14 @@ jobs:
   # Performs the following steps:
   # - Checks out the repository.
   # - Install Node.
-  # - Install Node dependencies.
-  # - Start WordPress env.
-  # - Run Cypress tests.
   # - Sets up PHP.
   # - Logs debug information.
   # - Logs PHP_CodeSniffer debug information.
   # - Runs PHPCS on the full codebase with warnings suppressed.
   # - Runs PHPCS on the `tests` directory without warnings suppressed.
+  # - Install Node dependencies.
+  # - Start WordPress env.
+  # - Run Cypress tests.
   # - todo: Configure Slack notifications for failing scans.
   cd:
     name: Continuous Integration
@@ -34,18 +34,6 @@ jobs:
         uses: actions/setup-node@v2.1.2
         with:
           node-version: 12
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Setup WordPress env
-        run: |
-          npx wp-env start
-      
-      - name: Run Cypress tests
-        run: |
-          cp cypress.json.example cypress.json
-          npx cypress run --config video=false
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
@@ -69,3 +57,15 @@ jobs:
 
       - name: Run PHPCS on all Core files
         run: vendor/bin/phpcs . -q -n --report=checkstyle | cs2pr
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Setup WordPress env
+        run: |
+          npx wp-env start
+      
+      - name: Run Cypress tests
+        run: |
+          cp cypress.json.example cypress.json
+          npx cypress run --config video=false
