@@ -3,3 +3,7 @@ vendor/
 
 # Ignore node_modules directory
 node_modules/
+
+cypress.json
+cypress/videos
+cypress/screenshots

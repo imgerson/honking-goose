@@ -18,5 +18,8 @@
   "homepage": "https://github.com/imgerson/honking-goose#readme",
   "devDependencies": {
     "@wordpress/scripts": "^12.5.0"
+  },
+  "dependencies": {
+    "cypress": "^6.4.0"
   }
 }
