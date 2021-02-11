@@ -35,29 +35,6 @@ jobs:
         with:
           node-version: 12
 
-      - name: Set up PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.4'
-          coverage: none
-          tools: composer, cs2pr
-
-      - name: Log debug information
-        run: |
-          php --version
-          composer --version
-
-      - name: Install Composer dependencies
-        run: |
-          composer install --prefer-dist --no-suggest --no-progress --no-ansi --no-interaction
-          echo "vendor/bin" >> $GITHUB_PATH
-
-      - name: Log PHPCS debug information
-        run: phpcs -i
-
-      - name: Run PHPCS on all Core files
-        run: vendor/bin/phpcs honking-goose.php -q -n --report=checkstyle | cs2pr
-
       - name: Install dependencies
         run: npm install
 
