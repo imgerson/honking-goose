@@ -20,6 +20,7 @@
     "@wordpress/scripts": "^12.5.0"
   },
   "dependencies": {
+    "@wordpress/env": "^3.0.2",
     "cypress": "^6.4.0"
   }
 }
