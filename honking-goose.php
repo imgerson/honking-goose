@@ -3,7 +3,7 @@
  * Plugin Name: Honking Goose
  * Plugin URI: https://mostlydevstuff.com/plugins/honking-goose
  * Description: A useless plugin that honks like a goose every time you press the "space" key
- * Version: 1.4.0
+ * Version: 1.6.0
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author: Gerson Ruiz
